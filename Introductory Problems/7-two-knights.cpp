@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll ll
+#define ll long long
 int solve(ll n) {
     if(n == 0 || n == 1) {
 	cout << "0";
