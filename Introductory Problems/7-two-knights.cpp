@@ -7,10 +7,11 @@ int solve(ll n) {
 	return 0;
     }
     for(ll i = 1; i <= n; i++) {
-        ll res = 0;
-        ll sq = i*i;
-        ll tot = (sq*(sq-1)) / 2;
-        ll def = 2 * (2*(i-1)*(i-2));
+        ll res = 0; ll sq = i * i;
+        //all possible arrangements
+        ll tot = (sq * (sq - 1)) / 2;
+        //all defective arrangements
+        ll def = 2 * (2 * (i - 1) * (i - 2));
         res = tot - def;
         cout << res << "\n";
     }
