@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    string s;
+    cin >> s;
+    map<char, int> mp;
+    for (char c : s) mp[c]++;
+ 
+    int cnt = 0;
+    char oddChar = '\0';
+    for (auto i : mp) {
+        if (i.second % 2 == 1) {
+            cnt++;
+            oddChar = i.first;
+        }
+    }
+ 
+    if (cnt > 1) {
+        cout << "NO SOLUTION";
+        return 0;
+    }
+ 
+    string firstHalf, secondHalf, middle;
+    for (auto i : mp) {
+        string temp(i.second / 2, i.first);
+        firstHalf += temp;
+        secondHalf = temp + secondHalf;
+    }
+ 
+    if (cnt == 1) middle = oddChar;
+ 
+    cout << firstHalf + middle + secondHalf;
+    return 0;
+}
